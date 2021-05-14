@@ -1,0 +1,17 @@
+@import '../../base/mixins.scss';
+
+
+.codexStakingTableWrap {
+	margin: 40px 34px 0 0;
+}
+
+@include mobile() {
+	.codexStakingTableWrap {
+		margin-right: 0;
+		overflow: scroll;
+	}
+
+	.codexStakingTable {
+		min-width: 700px;
+	}
+}
