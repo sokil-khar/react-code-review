@@ -1,0 +1,137 @@
+@import "../../../base/mixins.scss";
+
+.codexStakingTableRow {
+  display: flex;
+  align-items: center;
+  min-height: 79px;
+  padding: 10px 0;
+  color: var(--dark-blue);
+  border-bottom: 0.5px solid var(--grey);
+
+  &:first-of-type {
+    border-top: 0.5px solid var(--grey);
+  }
+
+  &.--expanded {
+    background: var(--grey-5);
+  }
+}
+
+.codexStakingTableRowItem {
+  width: 10%;
+
+  &:nth-child(1) {
+    padding-left: 30px;
+    text-align: left;
+  }
+
+  &:nth-child(2),
+  &:nth-child(4) {
+    width: 30%;
+  }
+
+  &:nth-child(5) {
+    width: 20%;
+  }
+
+	img {
+		height: 24px;
+		
+		&:not(:first-of-type) {
+			margin-left: 10px;
+			padding-left: 10px;
+			border-left: 1px solid var(--grey);
+		}
+	}
+}
+
+.codexStakingTableTextBold {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 21px;
+  text-align: left;
+  letter-spacing: 0.01em;
+}
+
+.codexStakingTableText {
+  font-size: 11px;
+  line-height: 16px;
+  text-align: left;
+  letter-spacing: 0.01em;
+
+  a {
+    color: var(--blue-2);
+    text-decoration: underline;
+  }
+}
+
+.codexStakingTableApy {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: var(--green);
+}
+
+.codexStakingTableCdoEarned {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: 0.01em;
+}
+
+.codexStakingTableExpandImg {
+  cursor: pointer;
+  transition: transform 0.3s ease-out;
+
+  .codexStakingTableRow.--expanded & {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease-out;
+  }
+}
+
+.codexStakingTableRowExpanded {
+  display: flex;
+  min-height: 231px;
+  padding: 40px 50px 80px 10%;
+  border-bottom: 0.5px solid var(--grey);
+
+  &.--expanded {
+    background: var(--grey-5);
+  }
+
+  .input {
+    margin-top: 8px;
+  }
+}
+
+@include mobile() {
+  .codexStakingTableRowItem {
+    width: 20%;
+
+    &:nth-child(1) {
+      padding-left: 20px;
+    }
+
+    &:nth-child(2) {
+      width: 30%;
+    }
+
+    &:nth-child(3) {
+      width: 20%;
+    }
+
+    &:nth-child(4) {
+      width: 20%;
+    }
+
+    &:nth-child(5) {
+      width: 10%;
+    }
+  }
+
+  .codexStakingTableRowExpanded {
+    padding: 40px 20px;
+  }
+}
